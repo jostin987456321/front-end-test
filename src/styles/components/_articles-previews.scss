@@ -6,6 +6,141 @@
  * o media queries según tu criterio.
  */
 
-.c-articles-previews {
+$ancho-container: 1200px;
+$margin-container: 0 auto 0 auto;
 
+.container-card {
+    max-width: 100%;
+    margin: $margin-container;
+    padding: 0 2rem;
+
+    .cards {
+        border-radius: 25px;
+        margin-bottom: 7%;
+        padding: 0 2%;
+        box-shadow: 2px 5px 12px 1px rgba(227, 227, 227, 0.75);
+        -webkit-box-shadow: 2px 5px 12px 1px rgba(227, 227, 227, 0.75);
+        -moz-box-shadow: 2px 5px 12px 1px rgba(227, 227, 227, 0.75);
+
+        .img-cards {
+            overflow: hidden;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+
+            img {
+                display: inline-block;
+                object-fit: contain;
+                width: 100%;
+            }
+
+            .desktop {
+                display: none;
+            }
+        }
+    }
+
+    .info-cards {
+        padding: 6% 6%;
+
+        .info-fech {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding-bottom: 2%;
+
+            span {
+                color: #484848;
+                font-weight: 300;
+                padding-right: 2%;
+                font-size: 0.97rem;
+            }
+        }
+
+        h3 {
+            color: #003282;
+            font-size: 1.4rem;
+            padding-bottom: 3%;
+        }
+
+        p {
+            color: #484848;
+            padding-top: 1%;
+            padding-bottom: 3%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #cd0082;
+            font-weight: 700;
+            padding-top: 3%;
+        }
+    }
+
+
+    .cards-ocultas {
+        display: none;
+    }
+
+    .mostrar {
+        display: inline-block;
+    }
+}
+
+.btn-See-all-insights {
+    padding-top: 1rem;
+    text-align: center;
+
+    button {
+        display: inline-block;
+        text-decoration: none;
+        color: #cd0082;
+        border-radius: 50px;
+        border: 1px solid #cd0082;
+        padding: 0.7rem 1.5rem;
+        max-width: 190px;
+        font-weight: 700;
+        transition: all .1s;
+        background-color: transparent;
+
+        &:hover {
+            background-color: #cd0082;
+            color: #fff;
+            transition: all .1.5s;
+            transform: scale(1.1);
+        }
+    }
+
+
+
+
+
+}
+
+@media screen and (min-width: 769px) {
+    .container-card {
+        padding-top: 4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+
+        .cards {
+            .img-cards {
+                .desktop {
+                    display: inline-block;
+                }
+
+                .mobile {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 993px) {
+    .container-card {
+        max-width: $ancho-container;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
